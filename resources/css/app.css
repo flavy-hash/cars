@@ -1,0 +1,51 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+
+    /* Deep indigo — headings, nav, primary buttons. */
+    --color-ink-50: #f4f4fb;
+    --color-ink-100: #e8e7f6;
+    --color-ink-200: #d3d1ec;
+    --color-ink-300: #a5a1c9;
+    --color-ink-500: #56508f;
+    --color-ink-700: #2f2a63;
+    --color-ink-800: #241f52;
+    --color-ink-900: #191540;
+    --color-ink-950: #100d2b;
+
+    /* Violet accent — search button, links, active states. */
+    --color-brand-50: #f1efff;
+    --color-brand-100: #e5e1ff;
+    --color-brand-200: #cfc8ff;
+    --color-brand-400: #8b7cf6;
+    --color-brand-500: #6d5ef0;
+    --color-brand-600: #5b4ce0;
+    --color-brand-700: #4a3cc4;
+
+    /* Page wash — the lavender tint sitting behind every section. */
+    --color-wash: #f4f3fc;
+
+    --radius-4xl: 2rem;
+}
+
+@layer base {
+    body {
+        @apply bg-wash text-ink-900 antialiased;
+    }
+}
+
+@layer components {
+    /* Soft coloured glow behind the hero and the closing CTA. */
+    .bg-aurora {
+        background-image:
+            radial-gradient(60rem 40rem at 85% -10%, rgba(109, 94, 240, 0.14), transparent 60%),
+            radial-gradient(50rem 35rem at 5% 0%, rgba(236, 168, 218, 0.12), transparent 55%);
+    }
+}
