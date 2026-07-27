@@ -5,19 +5,10 @@ namespace Database\Factories;
 use App\Enums\EnquiryStatus;
 use App\Enums\EnquiryType;
 use App\Models\Car;
-use App\Models\Enquiry;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-/**
- * @extends Factory<Enquiry>
- */
 class EnquiryFactory extends Factory
 {
-    /**
-     * Define the model's default state.
-     *
-     * @return array<string, mixed>
-     */
     public function definition(): array
     {
         return [
@@ -32,15 +23,8 @@ class EnquiryFactory extends Factory
         ];
     }
 
-    /**
-     * Mark the enquiry as unworked (status = New).
-     *
-     * @return self
-     */
-    public function unworked(): self
+    public function unworked()
     {
-        return $this->state(fn (array $attributes) => [
-            'status' => EnquiryStatus::New,
-        ]);
+        return $this->state(['status' => EnquiryStatus::New]);
     }
 }
