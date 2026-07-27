@@ -60,6 +60,6 @@ class CarResource extends Resource
      */
     public static function getGloballySearchableAttributes(): array
     {
-        return ['title', 'brand', 'model', 'city'];
+        return ['title', 'brand.name', 'model', 'city'];
     }
 }
