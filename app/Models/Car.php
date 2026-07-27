@@ -2,14 +2,12 @@
 
 namespace App\Models;
 
-use Database\Factories\CarFactory;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Car extends Model
 {
-    /** @use HasFactory<CarFactory> */
     use HasFactory;
 
     protected $guarded = [];
