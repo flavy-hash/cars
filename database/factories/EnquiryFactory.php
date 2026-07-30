@@ -11,6 +11,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 /**
  * @extends Factory<Enquiry>
  */
+use Illuminate\Database\Eloquent\Factories\Factory;
 class EnquiryFactory extends Factory
 {
     public function definition(): array
@@ -32,6 +33,20 @@ class EnquiryFactory extends Factory
 
     /** Not named new() — that would clash with Factory::new(). */
     public function unworked(): static
+
+        return [
+            'car_id' => Car::factory(),
+            'type' => EnquiryType::Reservation,
+            'name' => $this->faker->name(),
+            'email' => $this->faker->email(),
+            'phone' => $this->faker->phoneNumber(),
+            'message' => $this->faker->sentence(),
+            'status' => EnquiryStatus::New,
+            'preferred_at' => null,
+        ];
+    }
+
+    public function unworked()
     {
         return $this->state(['status' => EnquiryStatus::New]);
     }
